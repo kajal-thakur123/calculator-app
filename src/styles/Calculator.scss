@@ -1,0 +1,324 @@
+$primary-color: #00474b;
+$secondary-color: #21c3ac;
+$background-color: #c5e4e7;
+$accent-color: #649ba0;
+$text-color: #6b7777;
+$light-blue: #9fe8dd;
+$green-color: #0d686d;
+$dark-green-color: #004849;
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .main {
+    flex: 1;
+    height: 100%;
+    padding: 50px;
+    // Input styles
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    input {
+      background-color: #f3f8fb;
+      color: #a9c3c6;
+      width: 100%;
+      height: 55px;
+      border: 1px solid #f3f8fb;
+      border-radius: 10px;
+      padding: 0px 10px;
+      font-size: 22px;
+      color: #00474b;
+      font-family: "IBM Plex Mono";
+    }
+
+    .calHeading {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #406667;
+      font-size: 40px;
+      font-family: "IBM Plex Mono";
+      .calText{
+        width:130px;
+        // height:91px;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .heading {
+      display: flex;
+      justify-content: left;
+      color: $text-color;
+      font-size: 20px;
+      font-family: "IBM Plex Mono";
+    }
+
+    .bottom {
+      flex: 1;
+      padding: 30px;
+      margin-top: 30px;
+      height: 100%;
+      display: flex;
+      min-height: 300px;
+      border-radius: 15px;
+      background-color: #ffffff;
+      gap: 30px;
+
+      .first {
+        flex: 1;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .bill {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .heading {
+            color: $text-color;
+            font-size: 20px;
+            font-family: "IBM Plex Mono";
+          }
+          .billInput {
+            position: relative;
+            .inputWithIcon {
+              position: absolute;
+              left: 8px;
+              top: 16px;
+            }
+
+            .userIcon {
+              margin-right: 10px; /* Adjust the margin as needed */
+            }
+          }
+          input {
+            display: flex;
+            justify-content: right !important;
+            text-align: right !important;
+          }
+          .billAmountInput:focus-visible {
+            outline: none !important; // Remove default focus-visible outline
+          }
+          .billAmountInput:focus {
+            border: 2px solid #26c2ad !important;
+          }
+          .billAmountInput.zero {
+            border-color: #b48372 !important; // Border color when input value is 0
+          }
+        }
+
+        .percentage {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .heading {
+            color: $text-color;
+            font-size: 20px;
+            font-family: "IBM Plex Mono";
+          }
+
+          /* Tip Percentage Container */
+          .tip-percentage-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            .tip-percentage {
+              width: 134.88px;
+              height: 52px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background: $primary-color;
+              color: #fff;
+              border-radius: 10px;
+              font-size: 20px;
+              // Default custom styling
+              &.custom {
+                background: #f3f8fb;
+                color: $primary-color;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+
+              // Active state for selected tip percentage
+              &.active,
+              &.active.custom {
+                background-color: $light-blue;
+                color: #00474b;
+              }
+            }
+
+            .custom-tip-input {
+              width: 134.88px;
+              height: 52px !important;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 10px;
+
+              input {
+                // width: 134.88px;
+                height: 50px !important;
+                background: #f3f8fb !important;
+                color: #00474b !important;
+                border: 2px solid #26c2ad;
+              }
+              &.active {
+                background: #f3f8fb;
+                color: #00474b;
+              }
+              .billAmountInput:focus-visible {
+                outline: none !important; // Remove default focus-visible outline
+              }
+              .billAmountInput:focus {
+                border: 2px solid #26c2ad !important;
+              }
+              .billAmountInput.zero {
+                border-color: #b48372 !important; // Border color when input value is 0
+              }
+            }
+          }
+        }
+
+        .users {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          .numbersOfUsers {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .heading {
+              color: $text-color;
+              font-size: 20px;
+              font-family: "IBM Plex Mono";
+            }
+
+            .error-message {
+              color: $text-color;
+              font-size: 20px;
+              color: #b48372;
+              font-family: "IBM Plex Mono";
+            }
+          }
+          .billInput {
+            position: relative;
+            .inputWithIcon {
+              position: absolute;
+              left: 8px;
+              top: 16px;
+            }
+
+            .userIcon {
+              margin-right: 10px; /* Adjust the margin as needed */
+            }
+          }
+
+          input {
+            display: flex;
+            justify-content: right !important;
+            text-align: right !important;
+          }
+          .billAmountInput:focus-visible {
+            outline: none !important; // Remove default focus-visible outline
+          }
+          .billAmountInput:focus {
+            border: 2px solid #26c2ad !important;
+          }
+          .billAmountInput.zero {
+            border-color: #b48372 !important; // Border color when input value is 0
+          }
+        }
+      }
+
+      .second {
+        flex: 1;
+        padding: 50px 30px;
+        background-color: $primary-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 15px;
+
+        .total {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+
+          .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .tip {
+              color: #fff;
+              font-size: 20px;
+            }
+
+            span {
+              color: $accent-color;
+              font-size: 16px;
+              display: flex;
+              justify-content: left;
+            }
+
+            .total-text {
+              display: flex;
+              justify-content: left;
+              color: #fff;
+              font-size: 20px;
+            }
+
+            .price {
+              color: $secondary-color;
+              font-size: 32px;
+            }
+          }
+        }
+
+        .reset {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .resetButton {
+            width: 397px;
+            height: 55px;
+            background: $green-color;
+            color: $dark-green-color;
+            font-size: 24px;
+            border: none !important;
+            font-family: "IBM Plex Mono";
+            border-radius: 10px;
+            &.non-zero {
+              // Override background color when tip amount and total are non-zero
+              background-color: #9fe8df;
+            }
+          }
+        }
+      }
+    }
+  }
+}
